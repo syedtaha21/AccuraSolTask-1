@@ -1,0 +1,3 @@
+DIALOG TYPE: prompt
+DIALOG MESSAGE: Please enter your name
+Prompt Output: You have entered 'Playwright' !

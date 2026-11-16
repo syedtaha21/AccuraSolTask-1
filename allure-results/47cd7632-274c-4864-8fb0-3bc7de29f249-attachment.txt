@@ -1,0 +1,1 @@
+Submit control HTML: <input type="button" class="btn btn-dark selenium_btn bg-black text-white hover:bg-lambda-900 py-5 px-10 rounded" name="btn-submit" id="btn-submit" value="submit">

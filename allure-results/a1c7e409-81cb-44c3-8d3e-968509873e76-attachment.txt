@@ -1,0 +1,2 @@
+Selected Item: Mynamaki
+Class After Click: list-group-item

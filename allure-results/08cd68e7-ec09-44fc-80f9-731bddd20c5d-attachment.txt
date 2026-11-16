@@ -1,0 +1,5 @@
+Total Checkboxes: 4
+Checkbox 1: true
+Checkbox 2: true
+Checkbox 3: true
+Checkbox 4: true

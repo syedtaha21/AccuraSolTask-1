@@ -1,0 +1,2 @@
+Dialog Type: alert
+Dialog Message: I am an alert box!

@@ -1,0 +1,11 @@
+Total Checkboxes: 4
+Checkbox 1: true
+Checkbox 2: true
+Checkbox 3: true
+Checkbox 4: true
+Before Uncheck:
+After Uncheck:
+Checkbox 1: false
+Checkbox 2: false
+Checkbox 3: false
+Checkbox 4: false

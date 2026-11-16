@@ -1,0 +1,580 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: CheckBox.spec.ts >> Checkbox Test Suite >> TC02 - Select Single Checkbox
+- Location: tests\CheckBox.spec.ts:25:9
+
+# Error details
+
+```
+Error: expect(locator).toBeVisible() failed
+
+Locator: locator('//p[text()="Checked!"]')
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" locator('//p[text()="Checked!"]') with timeout 5000ms
+  - waiting for locator('//p[text()="Checked!"]')
+
+```
+
+```yaml
+- region "Promotional banner":
+  - link "Test how your agents actually behave across workflows, tools, and actions | Try Agent Assurance now!":
+    - /url: /register/?redirectTo=https://rook.lambdatest.com/projects
+- banner:
+  - navigation:
+    - link "Visit TestMu AI Homepage":
+      - /url: https://www.testmuai.com/
+      - img "TestMu AI Logo"
+    - link "Platform":
+      - /url: /feature/
+    - button "Solutions"
+    - button "Resources"
+    - link "Customers":
+      - /url: https://www.testmuai.com/customers/
+    - link "Pricing":
+      - /url: https://www.testmuai.com/pricing/
+    - link "Login":
+      - /url: /login/
+    - button "Book a Demo"
+    - link "Get Started Free":
+      - /url: https://www.testmuai.com/register/
+- main:
+  - heading "Checkbox Demo" [level=1]
+  - heading "Single Checkbox Demo" [level=2]
+  - checkbox "Click on check box" [checked]
+  - text: Click on check box
+  - heading "Disabled Checkbox Demo" [level=2]
+  - checkbox "Option 1"
+  - text: Option 1
+  - checkbox "Option 2"
+  - text: Option 2
+  - checkbox "Option 3" [disabled]
+  - text: Option 3
+  - checkbox "Option 4" [disabled]
+  - text: Option 4
+  - heading "Multiple Checkbox Demo" [level=2]
+  - checkbox "Option 1"
+  - text: Option 1
+  - checkbox "Option 2"
+  - text: Option 2
+  - checkbox "Option 3"
+  - text: Option 3
+  - checkbox "Option 4"
+  - text: Option 4
+  - button "Check All"
+- contentinfo:
+  - text: Products & Features
+  - list:
+    - listitem:
+      - link "Automation Testing Cloud":
+        - /url: /automation-cloud/
+    - listitem:
+      - link "KaneAI - GenAI-Native Testing Agent":
+        - /url: /kane-ai/
+    - listitem:
+      - link "Kane CLI":
+        - /url: /kane-cli/
+    - listitem:
+      - link "Kane CLI for Coding Agents":
+        - /url: /kane-cli/agents/
+    - listitem:
+      - link "Agent Testing":
+        - /url: /agent-testing/
+    - listitem:
+      - link "Agent Functional Testing":
+        - /url: /agent-assurance/
+    - listitem:
+      - link "Video Agent Testing":
+        - /url: /video-agent-testing/
+    - listitem:
+      - link "AI Agents":
+        - /url: /agents/
+    - listitem:
+      - link "MCP Server":
+        - /url: /mcp/
+    - listitem:
+      - link "Cross Browser Testing":
+        - /url: /cross-browser-testing/
+    - listitem:
+      - link "Real Device Cloud":
+        - /url: /real-device-cloud/
+    - listitem:
+      - link "Test Management":
+        - /url: /test-management/
+    - listitem:
+      - link "Mobile App Testing":
+        - /url: /mobile-app-testing/
+    - listitem:
+      - link "AI Testing":
+        - /url: /ai-testing/
+    - listitem:
+      - link "HyperExecute":
+        - /url: /hyperexecute/
+    - listitem:
+      - link "Performance Testing":
+        - /url: /performance-testing/
+    - listitem:
+      - link "Browser Cloud":
+        - /url: /browser-cloud/
+    - listitem:
+      - link "LT Debug":
+        - /url: /lt-debug/
+    - listitem:
+      - link "Local Page Testing":
+        - /url: /local-page-testing/
+    - listitem:
+      - link "Automated Screenshots":
+        - /url: /automated-screenshot/
+    - listitem:
+      - link "Geo-Location Testing":
+        - /url: /geolocation-testing/
+    - listitem:
+      - link "Accessibility Testing":
+        - /url: /accessibility-testing/
+    - listitem:
+      - link "Responsive Testing":
+        - /url: /responsive-test-online/
+    - listitem:
+      - link "Localization Testing":
+        - /url: /localization-testing/
+    - listitem:
+      - link "SmartUI Visual Testing Tool":
+        - /url: /visual-testing-tool/
+    - listitem:
+      - link "Integrations":
+        - /url: /integrations/
+    - listitem:
+      - link "Test Analytics":
+        - /url: /test-analytics/
+    - listitem:
+      - link "Professional Services":
+        - /url: /professional-services/
+    - listitem:
+      - link "Agentic Testing":
+        - /url: /agentic-testing/
+  - text: Test on
+  - list:
+    - listitem:
+      - link "Samsung Galaxy S26 New Samsung Galaxy S26":
+        - /url: /test-on-samsung-galaxy-s26/
+        - text: Samsung Galaxy S26
+        - img "New Samsung Galaxy S26"
+    - listitem:
+      - link "iPhone 17":
+        - /url: /test-on-iphone-17/
+    - listitem:
+      - link "List of Browsers":
+        - /url: /list-of-browsers/
+    - listitem:
+      - link "List of Real Devices":
+        - /url: /list-of-real-devices/
+    - listitem:
+      - link "Internet Explorer":
+        - /url: /test-on-internet-explorer-browsers/
+    - listitem:
+      - link "Firefox":
+        - /url: /test-on-firefox-browsers/
+    - listitem:
+      - link "Chrome":
+        - /url: /test-on-chrome-browsers/
+    - listitem:
+      - link "Safari Browser Online":
+        - /url: /test-on-safari-browsers/
+    - listitem:
+      - link "Microsoft Edge":
+        - /url: /test-on-edge-browsers/
+    - listitem:
+      - link "Opera":
+        - /url: /test-on-opera-browsers/
+    - listitem:
+      - link "Yandex":
+        - /url: /test-on-yandex-browsers/
+    - listitem:
+      - link "Mac OS":
+        - /url: /test-on-macos-browsers/
+    - listitem:
+      - link "Mobile Devices":
+        - /url: /test-on-mobile-devices/
+    - listitem:
+      - link "iOS Simulator":
+        - /url: /ios-simulator-online/
+    - listitem:
+      - link "Android Emulator":
+        - /url: /android-emulator-online/
+    - listitem:
+      - link "Browser Emulator":
+        - /url: /browser-emulator-online/
+    - listitem:
+      - link "Golden Gate":
+        - /url: /test-on-macos-golden-gate/
+  - text: Browser Automation
+  - list:
+    - listitem:
+      - link "Selenium Testing":
+        - /url: /selenium-automation/
+    - listitem:
+      - link "Selenium Grid":
+        - /url: /selenium-grid-online/
+    - listitem:
+      - link "Cypress Testing":
+        - /url: /cypress-testing/
+    - listitem:
+      - link "Playwright Testing":
+        - /url: /playwright-testing/
+    - listitem:
+      - link "Puppeteer Testing":
+        - /url: /puppeteer-testing/
+    - listitem:
+      - link "Taiko Testing":
+        - /url: /taiko-automation/
+  - link "Compare TestMu AI":
+    - /url: /vs/
+  - list:
+    - listitem:
+      - link "Browserstack Alternative":
+        - /url: /browserstack-alternative/
+    - listitem:
+      - link "Sauce Labs Alternative":
+        - /url: /saucelabs-alternative/
+    - listitem:
+      - link "Perfecto Alternative":
+        - /url: /perfecto-alternative/
+    - listitem:
+      - link "mabl Alternative":
+        - /url: /mabl-alternative/
+    - listitem:
+      - link "Testim Alternative":
+        - /url: /testim-alternative/
+    - listitem:
+      - link "Kobiton Alternative":
+        - /url: /kobiton-alternative/
+  - text: Mobile App Automation
+  - list:
+    - listitem:
+      - link "Appium Testing":
+        - /url: /appium-mobile-testing/
+    - listitem:
+      - link "Espresso Testing":
+        - /url: /espresso-automation-testing/
+    - listitem:
+      - link "XCUITest Testing":
+        - /url: /xcuitest-app-testing/
+  - text: Resources
+  - list:
+    - listitem:
+      - link "TestMu Conf 2027":
+        - /url: /testmuconf-2027/
+    - listitem:
+      - link "Use Cases":
+        - /url: /use-cases/
+    - listitem:
+      - link "Research":
+        - /url: /research/
+    - listitem:
+      - link "Blogs":
+        - /url: /blog/
+    - listitem:
+      - link "Certifications":
+        - /url: /certifications/
+    - listitem:
+      - link "Newsletter":
+        - /url: /newsletter/
+    - listitem:
+      - link "Webinars":
+        - /url: /webinar/
+    - listitem:
+      - link "FAQ":
+        - /url: /support/faq/
+    - listitem:
+      - link "Software Testing [Glossary]":
+        - /url: /learning-hub/software-testing-terminology/
+    - listitem:
+      - link "QA Job Board":
+        - /url: /qa-job-board/
+    - listitem:
+      - link "Software Testing Questions":
+        - /url: /software-testing-questions/
+    - listitem:
+      - link "Free Online Tools":
+        - /url: /free-online-tools/
+    - listitem:
+      - link "Latest Versions":
+        - /url: /latest-version/
+    - listitem:
+      - link "AI Testing Tools":
+        - /url: /blog/ai-testing-tools/
+    - listitem:
+      - link "Sitemap":
+        - /url: /sitemap.xml
+    - listitem:
+      - link "Status":
+        - /url: https://status.lambdatest.io
+  - text: Getting Started
+  - list:
+    - listitem:
+      - link "Test an AI Agent":
+        - /url: /support/docs/getting-started-with-agent-testing-platform/
+    - listitem:
+      - link "Create tests with KaneAI":
+        - /url: /support/docs/getting-started-with-kane-ai/
+    - listitem:
+      - link "Use Kane CLI":
+        - /url: /docs/kane-cli-introduction/
+    - listitem:
+      - link "Launch Browser Cloud":
+        - /url: /support/docs/launch-first-session/
+    - listitem:
+      - link "Run tests on HyperExecute":
+        - /url: /support/docs/getting-started-with-hyperexecute/
+    - listitem:
+      - link "Catch Visual Bugs with SmartUI":
+        - /url: /support/docs/smart-visual-regression-testing/
+    - listitem:
+      - link "Spot Accessibility Issues":
+        - /url: /support/docs/accessibility-testing/
+    - listitem:
+      - link "Manage Test Cases":
+        - /url: /support/docs/create-projects/
+    - listitem:
+      - link "TestMu AI MCP Server":
+        - /url: /support/docs/testmu-mcp-server/
+  - text: Company
+  - list:
+    - listitem:
+      - link "LambdaTest is Now TestMu AI":
+        - /url: /lambdatest-is-now-testmuai/
+    - listitem:
+      - link "About Us":
+        - /url: /about/
+    - listitem:
+      - link "Careers":
+        - /url: /career/
+    - listitem:
+      - link "Customers":
+        - /url: /customers/
+    - listitem:
+      - link "Press":
+        - /url: /press/
+    - listitem:
+      - link "Achievements":
+        - /url: /achievements/
+    - listitem:
+      - link "Reviews":
+        - /url: /reviews/
+    - listitem:
+      - link "Community & Support":
+        - /url: /community/
+    - listitem:
+      - link "Partners":
+        - /url: /partners/
+    - listitem:
+      - link "Open Source":
+        - /url: /open-source/
+    - listitem:
+      - link "Content Editorial Policy":
+        - /url: /editorial-policy-processes/
+    - listitem:
+      - link "Write for Us":
+        - /url: /testmu-write-for-us/
+    - listitem:
+      - link "Become an Affiliate":
+        - /url: /affiliate-program-partnership/
+    - listitem:
+      - link "Terms of Service":
+        - /url: /legal/terms-of-service/
+    - listitem:
+      - link "Privacy Policy":
+        - /url: /legal/privacy/
+    - listitem:
+      - link "Cookie Policy":
+        - /url: /legal/cookie/
+    - listitem:
+      - link "Trust":
+        - /url: /trust/
+    - listitem:
+      - link "Website Terms of Use":
+        - /url: /site-terms/
+    - listitem:
+      - link "Contact Us":
+        - /url: /contact-us/
+  - text: What's New
+  - list:
+    - listitem:
+      - link "Gartner® Magic Quadrant™ 2026 Report":
+        - /url: /gartner-magic-quadrant-agentic-software-quality-assurance-platforms/
+    - listitem:
+      - link "State of AI in Quality Engineering 2026 Report":
+        - /url: /research/state-of-ai-in-quality-engineering/
+    - listitem:
+      - link "Coding Jag - Issue 320":
+        - /url: /newsletter/editions/issue320/
+    - listitem:
+      - link "June'26 Updates":
+        - /url: /blog/june-2026-updates/
+    - listitem:
+      - link "Test on iPhone 18":
+        - /url: /test-on-iphone-18/
+  - img
+  - paragraph: Deliver unparalleled digital experience with our Next-Gen, AI-Native testing cloud platform. Ensure exceptional user experience across all devices and browsers.
+  - link "Start free Testing":
+    - /url: /register/
+  - button "Book a Demo"
+  - paragraph: Summarize with AI
+  - link "ChatGPT Icon":
+    - /url: https://chatgpt.com/?prompt=Summarize%20this%20page%20https%3A%2F%2Fwww.testmuai.com%2Fselenium-playground%2Fcheckbox-demo%2F
+    - img "ChatGPT Icon"
+  - link "Perplexity Icon":
+    - /url: https://www.perplexity.ai/search?q=Summarize%20this%20page%20https%3A%2F%2Fwww.testmuai.com%2Fselenium-playground%2Fcheckbox-demo%2F
+    - img "Perplexity Icon"
+  - link "Claude AI Icon":
+    - /url: https://claude.ai/new?q=Summarize%20this%20page%20https%3A%2F%2Fwww.testmuai.com%2Fselenium-playground%2Fcheckbox-demo%2F
+    - img "Claude AI Icon"
+  - link "Grok Icon":
+    - /url: https://x.com/i/grok?text=Summarize%20this%20page%20https%3A%2F%2Fwww.testmuai.com%2Fselenium-playground%2Fcheckbox-demo%2F
+    - img "Grok Icon"
+  - link "Google AI Icon":
+    - /url: https://www.google.com/search?udm=50&aep=11&q=Summarize%20this%20page%20https%3A%2F%2Fwww.testmuai.com%2Fselenium-playground%2Fcheckbox-demo%2F&no_sw_cr=1
+    - img "Google AI Icon"
+  - paragraph: TestMu AI (formerly LambdaTest) has formal standards certification and comply in line with acts and regulations across the globe.
+  - img "TestMu AI standards certification"
+  - paragraph: LambdaTest is TestMu AI
+  - paragraph:
+    - img
+    - text: Headquarters
+  - link "1 Sutter Street, Suite 500, San Francisco, California 94104":
+    - /url: https://www.google.com/maps/place/TestMu+AI+(Formerly+LambdaTest)/@37.7900416,-122.4008281,17z/data=!4m15!1m8!3m7!1s0x808580627b638d83:0x4b3c6ec12ee5fb4e!2s1+Sutter+St+Suite+500,+San+Francisco,+CA+94104,+USA!3b1!8m2!3d37.7900416!4d-122.4008281!16s%2Fg%2F11xsfkj3p3!3m5!1s0x808581571f7f490b:0xe303f9b390a0b285!8m2!3d37.7900416!4d-122.4008281!16s%2Fg%2F11ghnp6m4p?entry=ttu&g_ep=EgoyMDI2MDUxMi4wIKXMDSoASAFQAw%3D%3D
+  - paragraph: How can we help?
+  - button "Contact Us"
+  - img
+  - img "Footer Line"
+  - text: © 2026 TestMu AI (Formerly LambdaTest). All rights reserved. AI-Agentic Cloud Built With
+  - img "Love"
+  - text: For Quality Engineering
+  - list:
+    - listitem:
+      - link "Like TestmuAI on Facebook":
+        - /url: https://www.facebook.com/testmuai/
+        - img "Like TestmuAI on Facebook"
+    - listitem:
+      - link "Follow TestmuAI on Twitter":
+        - /url: https://x.com/testmuai
+        - img "TestmuAI Twitter"
+    - listitem:
+      - link "Follow TestmuAI on LinkedIn":
+        - /url: https://www.linkedin.com/company/testmu-ai/
+        - img "Follow TestmuAI on Linkedin"
+    - listitem:
+      - link "Like TestmuAI on Youtube":
+        - /url: https://www.youtube.com/@TestMuAI
+        - img "Subscribe TestmuAI on Youtube"
+    - listitem:
+      - link "Follow TestmuAI on Github":
+        - /url: https://github.com/LambdaTest/
+        - img "GitHub"
+    - listitem:
+      - link "Follow TestmuAI on Pinterest":
+        - /url: https://www.pinterest.com/testmuai/
+        - img "Pinterest"
+- complementary "Chat support"
+- alert
+- iframe
+```
+
+# Test source
+
+```ts
+  1  | 
+  2  | import { Page, expect } from '@playwright/test';
+  3  | import { CheckBoxLocators } from './CheckBox.locators';
+  4  | 
+  5  | export class CheckBoxActions {
+  6  | 
+  7  |     page: Page;
+  8  |     locators: CheckBoxLocators;
+  9  | 
+  10 |     constructor(page: Page) {
+  11 |         this.page = page;
+  12 |         this.locators = new CheckBoxLocators(page);
+  13 |     }
+  14 | 
+  15 |     // Open Checkbox page
+  16 |     async openCheckBoxPage() {
+  17 |         await this.page.goto(
+  18 |             'https://www.testmuai.com/selenium-playground/checkbox-demo/'
+  19 |         );
+  20 |     }
+  21 | 
+  22 |     // Verify heading
+  23 |     async verifyHeading() {
+  24 |         await expect(this.locators.checkBoxHeading)
+  25 |             .toBeVisible();
+  26 |     }
+  27 | 
+  28 |     // Select first checkbox
+  29 |     async selectFirstCheckBox() {
+  30 |         await this.locators.checkBox1.check();
+  31 |     }
+  32 | 
+  33 |     // Verify first checkbox is selected
+  34 |     async verifyFirstCheckBoxSelected() {
+  35 |         await expect(this.locators.checkBox1)
+  36 |             .toBeChecked();
+  37 |     }
+  38 | 
+  39 |     // Verify Checked message
+  40 |     async verifyCheckedMessage() {
+  41 |         await expect(this.locators.checkedMessage)
+> 42 |             .toBeVisible();
+     |              ^ Error: expect(locator).toBeVisible() failed
+  43 |     }
+  44 | 
+  45 |     // Verify disabled checkbox
+  46 |     async verifyDisabledCheckBox() {
+  47 |         await expect(this.locators.disableCheckBox)
+  48 |             .toBeDisabled();
+  49 |     }
+  50 | 
+  51 |     // Click Check All button
+  52 |     async clickCheckAllButton() {
+  53 |         await this.locators.checkAllBtn.click();
+  54 |     }
+  55 | 
+  56 |     // Verify all checkboxes are selected
+  57 |     async verifyAllCheckBoxesSelected() {
+  58 |         const count = await this.locators.multipleCheckBox.count();
+  59 | 
+  60 |         for (let i = 0; i < count; i++) {
+  61 |             await expect(this.locators.multipleCheckBox.nth(i))
+  62 |                 .toBeChecked();
+  63 |         }
+  64 |     }
+  65 | 
+  66 |     // Click Uncheck All button
+  67 |     async clickUncheckAllButton() {
+  68 |         await this.locators.uncheckAllBtn.click();
+  69 |     }
+  70 | 
+  71 |     // Verify all checkboxes are unchecked
+  72 |     async verifyAllCheckBoxesUnchecked() {
+  73 |         const count = await this.locators.multipleCheckBox.count();
+  74 | 
+  75 |         for (let i = 0; i < count; i++) {
+  76 |             await expect(this.locators.multipleCheckBox.nth(i))
+  77 |                 .not.toBeChecked();
+  78 |         }
+  79 |     }
+  80 | 
+  81 |   
+  82 | }
+  83 | 
+  84 | 
+```

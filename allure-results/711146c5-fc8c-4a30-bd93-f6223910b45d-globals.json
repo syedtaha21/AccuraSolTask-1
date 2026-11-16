@@ -1,0 +1,1 @@
+{"attachments":[],"errors":[{"message":"beforeEach hook failed: TypeError: _CheckBox.CheckBoxActions is not a constructor","trace":"TypeError: _CheckBox.CheckBoxActions is not a constructor\n    at C:\\Users\\Syed Taha\\Desktop\\playwright-Automation\\tests\\CheckBox.spec.ts:8:33","status":"broken","timestamp":1794507689541}]}

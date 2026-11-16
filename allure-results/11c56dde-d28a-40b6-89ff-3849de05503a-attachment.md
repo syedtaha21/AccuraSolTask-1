@@ -1,0 +1,137 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: JSAlerts.spec.ts >> TC02 - Confirm Alert OK Button
+- Location: tests\JSAlerts.spec.ts:14:5
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('xpath=(//button[text()="Click Me"])[2]')
+    - locator resolved to <button type="button" class="btn btn-dark mx-10 hover:bg-lambda-900 hover:border-lambda-900">Click Me</button>
+  - attempting click action
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - performing click action
+
+```
+
+# Test source
+
+```ts
+  1   | 
+  2   | import { Page, expect } from '@playwright/test';
+  3   | import { JavaScriptAlerts } from './JavaScriptAlert.locators';
+  4   | 
+  5   | export class JSAlertsActins {
+  6   | 
+  7   |     private locators: JavaScriptAlerts;
+  8   | 
+  9   |     constructor(private page: Page) {
+  10  |         this.locators = new JavaScriptAlerts(page);
+  11  |     }
+  12  | 
+  13  |     async openWebsite() {
+  14  |         await this.page.goto(
+  15  |             'https://www.testmuai.com/selenium-playground/javascript-alert-box-demo/'
+  16  |         );
+  17  |     }
+  18  | 
+  19  |     // TC01 - Simple Alert
+  20  |     async simpleAlertHandling() {
+  21  | 
+  22  |         const dialogPromise = this.page.waitForEvent('dialog');
+  23  | 
+  24  |         await this.locators.jsAlertBtn.click();
+  25  | 
+  26  |         const alert = await dialogPromise;
+  27  | 
+  28  |         expect(alert.type()).toBe('alert');
+  29  |         expect(alert.message()).toBe('I am an alert box!');
+  30  | 
+  31  |         await alert.accept();
+  32  |     }
+  33  | 
+  34  |     // TC02 - Confirm Alert OK
+  35  |     async confirmAlertOK() {
+  36  | 
+  37  |         const dialogPromise = this.page.waitForEvent('dialog');
+  38  | 
+> 39  |         await this.locators.confirmDialogBtn.click();
+      |                                              ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  40  | 
+  41  |         const alert = await dialogPromise;
+  42  | 
+  43  |         expect(alert.type()).toBe('confirm');
+  44  |         expect(alert.message()).toBe('Press a button!');
+  45  | 
+  46  |         await alert.accept();
+  47  | 
+  48  |         await expect(this.locators.confirmBoxMsg)
+  49  |             .toHaveText('You pressed OK!');
+  50  |     }
+  51  | 
+  52  |     // TC03 - Confirm Alert Cancel
+  53  |     async confirmAlertCancel() {
+  54  | 
+  55  |         const dialogPromise = this.page.waitForEvent('dialog');
+  56  | 
+  57  |         await this.locators.confirmDialogBtn.click();
+  58  | 
+  59  |         const alert = await dialogPromise;
+  60  | 
+  61  |         expect(alert.message()).toBe('Press a button!');
+  62  | 
+  63  |         await alert.dismiss();
+  64  | 
+  65  |         await expect(this.locators.confirmBoxMsg)
+  66  |             .toHaveText('You pressed Cancel!');
+  67  |     }
+  68  | 
+  69  |     // TC04 - Prompt Alert OK
+  70  |     async promptAlertOK(text: string) {
+  71  | 
+  72  |         const dialogPromise = this.page.waitForEvent('dialog');
+  73  | 
+  74  |         await this.locators.promptBtn.click();
+  75  | 
+  76  |         const alert = await dialogPromise;
+  77  | 
+  78  |         expect(alert.type()).toBe('prompt');
+  79  |         expect(alert.message()).toBe('Please enter your name');
+  80  | 
+  81  |         await alert.accept(text);
+  82  | 
+  83  |         await expect(this.locators.promptMsg)
+  84  |             .toHaveText(`You have entered '${text}' !`);
+  85  |     }
+  86  | 
+  87  |     // TC05 - Prompt Alert Cancel
+  88  |     async promptAlertCancel() {
+  89  | 
+  90  |         const dialogPromise = this.page.waitForEvent('dialog');
+  91  | 
+  92  |         await this.locators.promptBtn.click();
+  93  | 
+  94  |         const alert = await dialogPromise;
+  95  | 
+  96  |         expect(alert.message()).toBe('Please enter your name');
+  97  | 
+  98  |         await alert.dismiss();
+  99  |     }
+  100 | }
+  101 | 
+```

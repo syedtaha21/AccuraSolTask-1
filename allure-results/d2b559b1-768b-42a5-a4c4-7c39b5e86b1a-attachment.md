@@ -1,0 +1,745 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Slider.spec.ts >> TC03 - Verify Dynamic Slider Values
+- Location: tests\Slider.spec.ts:42:5
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: locator.press: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('input[type="range"]').first()
+    - locator resolved to <input min="1" max="100" value="5" type="range" class="sp__range"/>
+  - elementHandle.press("Home")
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - region "Promotional banner" [ref=e4]:
+      - link "Test how your agents actually behave across workflows, tools, and actions | Try Agent Assurance now!" [ref=e9] [cursor=pointer]:
+        - /url: /register/?redirectTo=https://rook.lambdatest.com/projects
+    - banner [ref=e11]:
+      - navigation [ref=e12]:
+        - generic [ref=e13]:
+          - link "Visit TestMu AI Homepage" [ref=e16] [cursor=pointer]:
+            - /url: https://www.testmuai.com/
+            - img "TestMu AI Logo" [ref=e17]
+          - generic [ref=e19]:
+            - generic [ref=e20]:
+              - link "Platform" [ref=e22] [cursor=pointer]:
+                - /url: /feature/
+              - button "Solutions" [ref=e25] [cursor=pointer]
+              - button "Resources" [ref=e28] [cursor=pointer]
+              - link "Customers" [ref=e30] [cursor=pointer]:
+                - /url: https://www.testmuai.com/customers/
+              - link "Pricing" [ref=e31] [cursor=pointer]:
+                - /url: https://www.testmuai.com/pricing/
+            - generic [ref=e32]:
+              - link "Login" [ref=e33] [cursor=pointer]:
+                - /url: /login/
+              - button "Book a Demo" [ref=e34] [cursor=pointer]
+              - link "Get Started Free" [ref=e35] [cursor=pointer]:
+                - /url: https://www.testmuai.com/register/
+    - main [ref=e36]:
+      - generic [ref=e37]:
+        - heading "Slider Demo" [level=1] [ref=e41]
+        - generic [ref=e45]:
+          - generic [ref=e46]:
+            - generic [ref=e47]:
+              - heading "Default value 5" [level=4] [ref=e48]
+              - generic [ref=e49]:
+                - slider [active] [ref=e50]: "30"
+                - status [ref=e51]: "30"
+            - generic [ref=e52]:
+              - heading "Default value 20" [level=4] [ref=e53]
+              - generic [ref=e54]:
+                - slider [ref=e55]: "20"
+                - status [ref=e56]: "20"
+          - generic [ref=e57]:
+            - generic [ref=e58]:
+              - heading "Default value 15" [level=4] [ref=e59]
+              - generic [ref=e60]:
+                - slider [ref=e61]: "15"
+                - status [ref=e62]: "15"
+            - generic [ref=e63]:
+              - heading "Default value 50" [level=4] [ref=e64]
+              - generic [ref=e65]:
+                - slider [ref=e66]: "50"
+                - status [ref=e67]: "50"
+          - generic [ref=e68]:
+            - generic [ref=e69]:
+              - heading "Default value 25" [level=4] [ref=e70]
+              - generic [ref=e71]:
+                - slider [ref=e72]: "25"
+                - status [ref=e73]: "25"
+            - generic [ref=e74]:
+              - heading "Default value 30" [level=4] [ref=e75]
+              - generic [ref=e76]:
+                - slider [ref=e77]: "30"
+                - status [ref=e78]: "30"
+          - generic [ref=e79]:
+            - generic [ref=e80]:
+              - heading "Default value 40" [level=4] [ref=e81]
+              - generic [ref=e82]:
+                - slider [ref=e83]: "40"
+                - status [ref=e84]: "40"
+            - generic [ref=e85]:
+              - heading "Default value 80" [level=4] [ref=e86]
+              - generic [ref=e87]:
+                - slider [ref=e88]: "80"
+                - status [ref=e89]: "80"
+    - contentinfo [ref=e90]:
+      - generic [ref=e91]:
+        - generic [ref=e93]:
+          - generic [ref=e94]:
+            - generic [ref=e95]:
+              - generic [ref=e96]: Products & Features
+              - list [ref=e98]:
+                - listitem [ref=e99]:
+                  - link "Automation Testing Cloud" [ref=e100] [cursor=pointer]:
+                    - /url: /automation-cloud/
+                - listitem [ref=e101]:
+                  - link "KaneAI - GenAI-Native Testing Agent" [ref=e102] [cursor=pointer]:
+                    - /url: /kane-ai/
+                - listitem [ref=e103]:
+                  - link "Kane CLI" [ref=e104] [cursor=pointer]:
+                    - /url: /kane-cli/
+                - listitem [ref=e105]:
+                  - link "Kane CLI for Coding Agents" [ref=e106] [cursor=pointer]:
+                    - /url: /kane-cli/agents/
+                - listitem [ref=e107]:
+                  - link "Agent Testing" [ref=e108] [cursor=pointer]:
+                    - /url: /agent-testing/
+                - listitem [ref=e109]:
+                  - link "Agent Functional Testing" [ref=e110] [cursor=pointer]:
+                    - /url: /agent-assurance/
+                - listitem [ref=e111]:
+                  - link "Video Agent Testing" [ref=e112] [cursor=pointer]:
+                    - /url: /video-agent-testing/
+                - listitem [ref=e113]:
+                  - link "AI Agents" [ref=e114] [cursor=pointer]:
+                    - /url: /agents/
+                - listitem [ref=e115]:
+                  - link "MCP Server" [ref=e116] [cursor=pointer]:
+                    - /url: /mcp/
+                - listitem [ref=e117]:
+                  - link "Cross Browser Testing" [ref=e118] [cursor=pointer]:
+                    - /url: /cross-browser-testing/
+                - listitem [ref=e119]:
+                  - link "Real Device Cloud" [ref=e120] [cursor=pointer]:
+                    - /url: /real-device-cloud/
+                - listitem [ref=e121]:
+                  - link "Test Management" [ref=e122] [cursor=pointer]:
+                    - /url: /test-management/
+                - listitem [ref=e123]:
+                  - link "Mobile App Testing" [ref=e124] [cursor=pointer]:
+                    - /url: /mobile-app-testing/
+                - listitem [ref=e125]:
+                  - link "AI Testing" [ref=e126] [cursor=pointer]:
+                    - /url: /ai-testing/
+                - listitem [ref=e127]:
+                  - link "HyperExecute" [ref=e128] [cursor=pointer]:
+                    - /url: /hyperexecute/
+                - listitem [ref=e129]:
+                  - link "Performance Testing" [ref=e130] [cursor=pointer]:
+                    - /url: /performance-testing/
+                - listitem [ref=e131]:
+                  - link "Browser Cloud" [ref=e132] [cursor=pointer]:
+                    - /url: /browser-cloud/
+                - listitem [ref=e133]:
+                  - link "LT Debug" [ref=e134] [cursor=pointer]:
+                    - /url: /lt-debug/
+                - listitem [ref=e135]:
+                  - link "Local Page Testing" [ref=e136] [cursor=pointer]:
+                    - /url: /local-page-testing/
+                - listitem [ref=e137]:
+                  - link "Automated Screenshots" [ref=e138] [cursor=pointer]:
+                    - /url: /automated-screenshot/
+                - listitem [ref=e139]:
+                  - link "Geo-Location Testing" [ref=e140] [cursor=pointer]:
+                    - /url: /geolocation-testing/
+                - listitem [ref=e141]:
+                  - link "Accessibility Testing" [ref=e142] [cursor=pointer]:
+                    - /url: /accessibility-testing/
+                - listitem [ref=e143]:
+                  - link "Responsive Testing" [ref=e144] [cursor=pointer]:
+                    - /url: /responsive-test-online/
+                - listitem [ref=e145]:
+                  - link "Localization Testing" [ref=e146] [cursor=pointer]:
+                    - /url: /localization-testing/
+                - listitem [ref=e147]:
+                  - link "SmartUI Visual Testing Tool" [ref=e148] [cursor=pointer]:
+                    - /url: /visual-testing-tool/
+                - listitem [ref=e149]:
+                  - link "Integrations" [ref=e150] [cursor=pointer]:
+                    - /url: /integrations/
+                - listitem [ref=e151]:
+                  - link "Test Analytics" [ref=e152] [cursor=pointer]:
+                    - /url: /test-analytics/
+                - listitem [ref=e153]:
+                  - link "Professional Services" [ref=e154] [cursor=pointer]:
+                    - /url: /professional-services/
+                - listitem [ref=e155]:
+                  - link "Agentic Testing" [ref=e156] [cursor=pointer]:
+                    - /url: /agentic-testing/
+            - generic [ref=e157]:
+              - generic [ref=e158]: Test on
+              - generic [ref=e159]:
+                - list [ref=e160]:
+                  - listitem [ref=e161]:
+                    - link [ref=e162] [cursor=pointer]:
+                      - /url: /test-on-samsung-galaxy-s26/
+                      - text: Samsung Galaxy S26
+                      - img "New Samsung Galaxy S26" [ref=e163]
+                  - listitem [ref=e164]:
+                    - link "iPhone 17" [ref=e165] [cursor=pointer]:
+                      - /url: /test-on-iphone-17/
+                  - listitem [ref=e166]:
+                    - link "List of Browsers" [ref=e167] [cursor=pointer]:
+                      - /url: /list-of-browsers/
+                  - listitem [ref=e168]:
+                    - link "List of Real Devices" [ref=e169] [cursor=pointer]:
+                      - /url: /list-of-real-devices/
+                  - listitem [ref=e170]:
+                    - link "Internet Explorer" [ref=e171] [cursor=pointer]:
+                      - /url: /test-on-internet-explorer-browsers/
+                  - listitem [ref=e172]:
+                    - link "Firefox" [ref=e173] [cursor=pointer]:
+                      - /url: /test-on-firefox-browsers/
+                  - listitem [ref=e174]:
+                    - link "Chrome" [ref=e175] [cursor=pointer]:
+                      - /url: /test-on-chrome-browsers/
+                  - listitem [ref=e176]:
+                    - link "Safari Browser Online" [ref=e177] [cursor=pointer]:
+                      - /url: /test-on-safari-browsers/
+                  - listitem [ref=e178]:
+                    - link "Microsoft Edge" [ref=e179] [cursor=pointer]:
+                      - /url: /test-on-edge-browsers/
+                  - listitem [ref=e180]:
+                    - link "Opera" [ref=e181] [cursor=pointer]:
+                      - /url: /test-on-opera-browsers/
+                  - listitem [ref=e182]:
+                    - link "Yandex" [ref=e183] [cursor=pointer]:
+                      - /url: /test-on-yandex-browsers/
+                  - listitem [ref=e184]:
+                    - link "Mac OS" [ref=e185] [cursor=pointer]:
+                      - /url: /test-on-macos-browsers/
+                  - listitem [ref=e186]:
+                    - link "Mobile Devices" [ref=e187] [cursor=pointer]:
+                      - /url: /test-on-mobile-devices/
+                  - listitem [ref=e188]:
+                    - link "iOS Simulator" [ref=e189] [cursor=pointer]:
+                      - /url: /ios-simulator-online/
+                  - listitem [ref=e190]:
+                    - link "Android Emulator" [ref=e191] [cursor=pointer]:
+                      - /url: /android-emulator-online/
+                  - listitem [ref=e192]:
+                    - link "Browser Emulator" [ref=e193] [cursor=pointer]:
+                      - /url: /browser-emulator-online/
+                  - listitem [ref=e194]:
+                    - link "Golden Gate" [ref=e195] [cursor=pointer]:
+                      - /url: /test-on-macos-golden-gate/
+                - generic [ref=e196]: Browser Automation
+                - list [ref=e197]:
+                  - listitem [ref=e198]:
+                    - link "Selenium Testing" [ref=e199] [cursor=pointer]:
+                      - /url: /selenium-automation/
+                  - listitem [ref=e200]:
+                    - link "Selenium Grid" [ref=e201] [cursor=pointer]:
+                      - /url: /selenium-grid-online/
+                  - listitem [ref=e202]:
+                    - link "Cypress Testing" [ref=e203] [cursor=pointer]:
+                      - /url: /cypress-testing/
+                  - listitem [ref=e204]:
+                    - link "Playwright Testing" [ref=e205] [cursor=pointer]:
+                      - /url: /playwright-testing/
+                  - listitem [ref=e206]:
+                    - link "Puppeteer Testing" [ref=e207] [cursor=pointer]:
+                      - /url: /puppeteer-testing/
+                  - listitem [ref=e208]:
+                    - link "Taiko Testing" [ref=e209] [cursor=pointer]:
+                      - /url: /taiko-automation/
+                - link "Compare TestMu AI" [ref=e211] [cursor=pointer]:
+                  - /url: /vs/
+                - list [ref=e212]:
+                  - listitem [ref=e213]:
+                    - link "Browserstack Alternative" [ref=e214] [cursor=pointer]:
+                      - /url: /browserstack-alternative/
+                  - listitem [ref=e215]:
+                    - link "Sauce Labs Alternative" [ref=e216] [cursor=pointer]:
+                      - /url: /saucelabs-alternative/
+                  - listitem [ref=e217]:
+                    - link "Perfecto Alternative" [ref=e218] [cursor=pointer]:
+                      - /url: /perfecto-alternative/
+                  - listitem [ref=e219]:
+                    - link "mabl Alternative" [ref=e220] [cursor=pointer]:
+                      - /url: /mabl-alternative/
+                  - listitem [ref=e221]:
+                    - link "Testim Alternative" [ref=e222] [cursor=pointer]:
+                      - /url: /testim-alternative/
+                  - listitem [ref=e223]:
+                    - link "Kobiton Alternative" [ref=e224] [cursor=pointer]:
+                      - /url: /kobiton-alternative/
+            - generic [ref=e225]:
+              - generic [ref=e226]: Mobile App Automation
+              - generic [ref=e227]:
+                - list [ref=e228]:
+                  - listitem [ref=e229]:
+                    - link "Appium Testing" [ref=e230] [cursor=pointer]:
+                      - /url: /appium-mobile-testing/
+                  - listitem [ref=e231]:
+                    - link "Espresso Testing" [ref=e232] [cursor=pointer]:
+                      - /url: /espresso-automation-testing/
+                  - listitem [ref=e233]:
+                    - link "XCUITest Testing" [ref=e234] [cursor=pointer]:
+                      - /url: /xcuitest-app-testing/
+                - generic [ref=e235]: Resources
+                - list [ref=e236]:
+                  - listitem [ref=e237]:
+                    - link "TestMu Conf 2027" [ref=e238] [cursor=pointer]:
+                      - /url: /testmuconf-2027/
+                  - listitem [ref=e239]:
+                    - link "Use Cases" [ref=e240] [cursor=pointer]:
+                      - /url: /use-cases/
+                  - listitem [ref=e241]:
+                    - link "Research" [ref=e242] [cursor=pointer]:
+                      - /url: /research/
+                  - listitem [ref=e243]:
+                    - link "Blogs" [ref=e244] [cursor=pointer]:
+                      - /url: /blog/
+                  - listitem [ref=e245]:
+                    - link "Certifications" [ref=e246] [cursor=pointer]:
+                      - /url: /certifications/
+                  - listitem [ref=e247]:
+                    - link "Newsletter" [ref=e248] [cursor=pointer]:
+                      - /url: /newsletter/
+                  - listitem [ref=e249]:
+                    - link "Webinars" [ref=e250] [cursor=pointer]:
+                      - /url: /webinar/
+                  - listitem [ref=e251]:
+                    - link "FAQ" [ref=e252] [cursor=pointer]:
+                      - /url: /support/faq/
+                  - listitem [ref=e253]:
+                    - link "Software Testing [Glossary]" [ref=e254] [cursor=pointer]:
+                      - /url: /learning-hub/software-testing-terminology/
+                  - listitem [ref=e255]:
+                    - link "QA Job Board" [ref=e256] [cursor=pointer]:
+                      - /url: /qa-job-board/
+                  - listitem [ref=e257]:
+                    - link "Software Testing Questions" [ref=e258] [cursor=pointer]:
+                      - /url: /software-testing-questions/
+                  - listitem [ref=e259]:
+                    - link "Free Online Tools" [ref=e260] [cursor=pointer]:
+                      - /url: /free-online-tools/
+                  - listitem [ref=e261]:
+                    - link "Latest Versions" [ref=e262] [cursor=pointer]:
+                      - /url: /latest-version/
+                  - listitem [ref=e263]:
+                    - link "AI Testing Tools" [ref=e264] [cursor=pointer]:
+                      - /url: /blog/ai-testing-tools/
+                  - listitem [ref=e265]:
+                    - link "Sitemap" [ref=e266] [cursor=pointer]:
+                      - /url: /sitemap.xml
+                  - listitem [ref=e267]:
+                    - link "Status" [ref=e268] [cursor=pointer]:
+                      - /url: https://status.lambdatest.io
+                - generic [ref=e269]: Getting Started
+                - list [ref=e270]:
+                  - listitem [ref=e271]:
+                    - link "Test an AI Agent" [ref=e272] [cursor=pointer]:
+                      - /url: /support/docs/getting-started-with-agent-testing-platform/
+                  - listitem [ref=e273]:
+                    - link "Create tests with KaneAI" [ref=e274] [cursor=pointer]:
+                      - /url: /support/docs/getting-started-with-kane-ai/
+                  - listitem [ref=e275]:
+                    - link "Use Kane CLI" [ref=e276] [cursor=pointer]:
+                      - /url: /docs/kane-cli-introduction/
+                  - listitem [ref=e277]:
+                    - link "Launch Browser Cloud" [ref=e278] [cursor=pointer]:
+                      - /url: /support/docs/launch-first-session/
+                  - listitem [ref=e279]:
+                    - link "Run tests on HyperExecute" [ref=e280] [cursor=pointer]:
+                      - /url: /support/docs/getting-started-with-hyperexecute/
+                  - listitem [ref=e281]:
+                    - link "Catch Visual Bugs with SmartUI" [ref=e282] [cursor=pointer]:
+                      - /url: /support/docs/smart-visual-regression-testing/
+                  - listitem [ref=e283]:
+                    - link "Spot Accessibility Issues" [ref=e284] [cursor=pointer]:
+                      - /url: /support/docs/accessibility-testing/
+                  - listitem [ref=e285]:
+                    - link "Manage Test Cases" [ref=e286] [cursor=pointer]:
+                      - /url: /support/docs/create-projects/
+                  - listitem [ref=e287]:
+                    - link "TestMu AI MCP Server" [ref=e288] [cursor=pointer]:
+                      - /url: /support/docs/testmu-mcp-server/
+            - generic [ref=e289]:
+              - generic [ref=e290]: Company
+              - generic [ref=e291]:
+                - list [ref=e292]:
+                  - listitem [ref=e293]:
+                    - link "LambdaTest is Now TestMu AI" [ref=e294] [cursor=pointer]:
+                      - /url: /lambdatest-is-now-testmuai/
+                  - listitem [ref=e295]:
+                    - link "About Us" [ref=e296] [cursor=pointer]:
+                      - /url: /about/
+                  - listitem [ref=e297]:
+                    - link "Careers" [ref=e298] [cursor=pointer]:
+                      - /url: /career/
+                  - listitem [ref=e299]:
+                    - link "Customers" [ref=e300] [cursor=pointer]:
+                      - /url: /customers/
+                  - listitem [ref=e301]:
+                    - link "Press" [ref=e302] [cursor=pointer]:
+                      - /url: /press/
+                  - listitem [ref=e303]:
+                    - link "Achievements" [ref=e304] [cursor=pointer]:
+                      - /url: /achievements/
+                  - listitem [ref=e305]:
+                    - link "Reviews" [ref=e306] [cursor=pointer]:
+                      - /url: /reviews/
+                  - listitem [ref=e307]:
+                    - link "Community & Support" [ref=e308] [cursor=pointer]:
+                      - /url: /community/
+                  - listitem [ref=e309]:
+                    - link "Partners" [ref=e310] [cursor=pointer]:
+                      - /url: /partners/
+                  - listitem [ref=e311]:
+                    - link "Open Source" [ref=e312] [cursor=pointer]:
+                      - /url: /open-source/
+                  - listitem [ref=e313]:
+                    - link "Content Editorial Policy" [ref=e314] [cursor=pointer]:
+                      - /url: /editorial-policy-processes/
+                  - listitem [ref=e315]:
+                    - link "Write for Us" [ref=e316] [cursor=pointer]:
+                      - /url: /testmu-write-for-us/
+                  - listitem [ref=e317]:
+                    - link "Become an Affiliate" [ref=e318] [cursor=pointer]:
+                      - /url: /affiliate-program-partnership/
+                  - listitem [ref=e319]:
+                    - link "Terms of Service" [ref=e320] [cursor=pointer]:
+                      - /url: /legal/terms-of-service/
+                  - listitem [ref=e321]:
+                    - link "Privacy Policy" [ref=e322] [cursor=pointer]:
+                      - /url: /legal/privacy/
+                  - listitem [ref=e323]:
+                    - link "Cookie Policy" [ref=e324] [cursor=pointer]:
+                      - /url: /legal/cookie/
+                  - listitem [ref=e325]:
+                    - link "Trust" [ref=e326] [cursor=pointer]:
+                      - /url: /trust/
+                  - listitem [ref=e327]:
+                    - link "Website Terms of Use" [ref=e328] [cursor=pointer]:
+                      - /url: /site-terms/
+                  - listitem [ref=e329]:
+                    - link "Contact Us" [ref=e330] [cursor=pointer]:
+                      - /url: /contact-us/
+                - generic [ref=e331]: What's New
+                - list [ref=e332]:
+                  - listitem [ref=e333]:
+                    - link "Gartner® Magic Quadrant™ 2026 Report" [ref=e334] [cursor=pointer]:
+                      - /url: /gartner-magic-quadrant-agentic-software-quality-assurance-platforms/
+                  - listitem [ref=e335]:
+                    - link "State of AI in Quality Engineering 2026 Report" [ref=e336] [cursor=pointer]:
+                      - /url: /research/state-of-ai-in-quality-engineering/
+                  - listitem [ref=e337]:
+                    - link "Coding Jag - Issue 320" [ref=e338] [cursor=pointer]:
+                      - /url: /newsletter/editions/issue320/
+                  - listitem [ref=e339]:
+                    - link "June'26 Updates" [ref=e340] [cursor=pointer]:
+                      - /url: /blog/june-2026-updates/
+                  - listitem [ref=e341]:
+                    - link "Test on iPhone 18" [ref=e342] [cursor=pointer]:
+                      - /url: /test-on-iphone-18/
+          - generic [ref=e343]:
+            - generic [ref=e344]:
+              - paragraph [ref=e367]: Deliver unparalleled digital experience with our Next-Gen, AI-Native testing cloud platform. Ensure exceptional user experience across all devices and browsers.
+              - generic [ref=e368]:
+                - link "Start free Testing" [ref=e369] [cursor=pointer]:
+                  - /url: /register/
+                - button "Book a Demo" [ref=e371] [cursor=pointer]
+            - generic [ref=e372]:
+              - generic [ref=e373]:
+                - paragraph [ref=e374]: Summarize with AI
+                - generic [ref=e375]:
+                  - link [ref=e376] [cursor=pointer]:
+                    - /url: https://chatgpt.com/?prompt=Summarize%20this%20page%20https%3A%2F%2Fwww.testmuai.com%2Fselenium-playground%2Fdrag-drop-range-sliders-demo%2F
+                    - img "ChatGPT Icon" [ref=e377]
+                  - link [ref=e378] [cursor=pointer]:
+                    - /url: https://www.perplexity.ai/search?q=Summarize%20this%20page%20https%3A%2F%2Fwww.testmuai.com%2Fselenium-playground%2Fdrag-drop-range-sliders-demo%2F
+                    - img "Perplexity Icon" [ref=e379]
+                  - link [ref=e380] [cursor=pointer]:
+                    - /url: https://claude.ai/new?q=Summarize%20this%20page%20https%3A%2F%2Fwww.testmuai.com%2Fselenium-playground%2Fdrag-drop-range-sliders-demo%2F
+                    - img "Claude AI Icon" [ref=e381]
+                  - link [ref=e382] [cursor=pointer]:
+                    - /url: https://x.com/i/grok?text=Summarize%20this%20page%20https%3A%2F%2Fwww.testmuai.com%2Fselenium-playground%2Fdrag-drop-range-sliders-demo%2F
+                    - img "Grok Icon" [ref=e383]
+                  - link [ref=e384] [cursor=pointer]:
+                    - /url: https://www.google.com/search?udm=50&aep=11&q=Summarize%20this%20page%20https%3A%2F%2Fwww.testmuai.com%2Fselenium-playground%2Fdrag-drop-range-sliders-demo%2F&no_sw_cr=1
+                    - img "Google AI Icon" [ref=e385]
+              - paragraph [ref=e386]: TestMu AI (formerly LambdaTest) has formal standards certification and comply in line with acts and regulations across the globe.
+              - img "TestMu AI standards certification" [ref=e387]
+              - paragraph [ref=e388]: LambdaTest is TestMu AI
+              - paragraph [ref=e389]: Headquarters
+              - link "1 Sutter Street, Suite 500, San Francisco, California 94104" [ref=e394] [cursor=pointer]:
+                - /url: https://www.google.com/maps/place/TestMu+AI+(Formerly+LambdaTest)/@37.7900416,-122.4008281,17z/data=!4m15!1m8!3m7!1s0x808580627b638d83:0x4b3c6ec12ee5fb4e!2s1+Sutter+St+Suite+500,+San+Francisco,+CA+94104,+USA!3b1!8m2!3d37.7900416!4d-122.4008281!16s%2Fg%2F11xsfkj3p3!3m5!1s0x808581571f7f490b:0xe303f9b390a0b285!8m2!3d37.7900416!4d-122.4008281!16s%2Fg%2F11ghnp6m4p?entry=ttu&g_ep=EgoyMDI2MDUxMi4wIKXMDSoASAFQAw%3D%3D
+        - generic [ref=e395]:
+          - paragraph [ref=e396]: How can we help?
+          - button "Contact Us" [ref=e398] [cursor=pointer]
+      - img "Footer Line" [ref=e418]
+      - generic [ref=e421]:
+        - generic [ref=e422]: © 2026 TestMu AI (Formerly LambdaTest). All rights reserved.
+        - generic [ref=e423]:
+          - text: AI-Agentic Cloud Built With
+          - img "Love" [ref=e424]
+          - text: For Quality Engineering
+        - list [ref=e426]:
+          - listitem [ref=e427]:
+            - link "Like TestmuAI on Facebook" [ref=e428] [cursor=pointer]:
+              - /url: https://www.facebook.com/testmuai/
+              - img "Like TestmuAI on Facebook" [ref=e429]
+          - listitem [ref=e430]:
+            - link "Follow TestmuAI on Twitter" [ref=e431] [cursor=pointer]:
+              - /url: https://x.com/testmuai
+              - img "TestmuAI Twitter" [ref=e432]
+          - listitem [ref=e433]:
+            - link "Follow TestmuAI on LinkedIn" [ref=e434] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/testmu-ai/
+              - img "Follow TestmuAI on Linkedin" [ref=e435]
+          - listitem [ref=e436]:
+            - link "Like TestmuAI on Youtube" [ref=e437] [cursor=pointer]:
+              - /url: https://www.youtube.com/@TestMuAI
+              - img "Subscribe TestmuAI on Youtube" [ref=e438]
+          - listitem [ref=e439]:
+            - link "Follow TestmuAI on Github" [ref=e440] [cursor=pointer]:
+              - /url: https://github.com/LambdaTest/
+              - img "GitHub" [ref=e441]
+          - listitem [ref=e442]:
+            - link "Follow TestmuAI on Pinterest" [ref=e443] [cursor=pointer]:
+              - /url: https://www.pinterest.com/testmuai/
+              - img "Pinterest" [ref=e444]
+    - complementary "Chat support"
+  - alert [ref=e445]
+  - iframe [aria-hidden] [ref=e446]
+  - button "Hello, have a question? Let’s chat." [ref=e447] [cursor=pointer]
+```
+
+# Test source
+
+```ts
+  128 |     );
+  129 | 
+  130 |     // Calculate thumb position
+  131 |     const thumbOffset = 8;
+  132 |     const usableWidth = box.width - (thumbOffset * 2);
+  133 | 
+  134 |     const targetX =
+  135 |         box.x + thumbOffset +
+  136 |         ((value - min) / (max - min)) * usableWidth;
+  137 | 
+  138 |     const targetY = box.y + box.height / 2;
+  139 | 
+  140 |     // Drag slider
+  141 |     await this.page.mouse.move(
+  142 |         box.x + thumbOffset,
+  143 |         targetY
+  144 |     );
+  145 | 
+  146 |     await this.page.mouse.down();
+  147 | 
+  148 |     await this.page.mouse.move(
+  149 |         targetX,
+  150 |         targetY,
+  151 |         { steps: 30 }
+  152 |     );
+  153 | 
+  154 |     await this.page.mouse.up();
+  155 | 
+  156 |     // Verify updated value
+  157 |     await expect(slider).toHaveValue(String(value));
+  158 | }
+  159 | 
+  160 |   // Get current slider value
+  161 |     async getSliderValue(sliderIndex: number) {
+  162 | 
+  163 |         return await this.locators.allSlider
+  164 |             .nth(sliderIndex)
+  165 |             .inputValue();
+  166 |     }
+  167 | 
+  168 |      // Verify updated slider value
+  169 |     async verifySliderValue(
+  170 |         sliderIndex: number,
+  171 |         expectedValue: number
+  172 |     ) {
+  173 | 
+  174 |         await expect(
+  175 |             this.locators.allSlider.nth(sliderIndex)
+  176 |         ).toHaveValue(String(expectedValue));
+  177 |     }
+  178 | 
+  179 |     // Move first slider
+  180 |     async moveFirstSlider(value: number) {
+  181 |         await this.dragSlider(0, value);
+  182 |     }
+  183 | 
+  184 |     // Move second slider
+  185 |     async moveSecondSlider(value: number) {
+  186 |         await this.dragSlider(1, value);
+  187 |     }
+  188 | 
+  189 | 
+  190 |     //move 3rd
+  191 |     async moveThirdSlider(value: number) {
+  192 |         await this.dragSlider(2, value);
+  193 |     }
+  194 | 
+  195 | 
+  196 | 
+  197 | 
+  198 | 
+  199 | 
+  200 | 
+  201 | 
+  202 | 
+  203 | 
+  204 |     
+  205 | // Move slider to exact value using keyboard
+  206 | async setSliderValue(sliderIndex: number, targetValue: number) {
+  207 | 
+  208 |     const slider = this.locators.allSlider.nth(sliderIndex);
+  209 | 
+  210 |     const min = Number(await slider.getAttribute('min') || 0);
+  211 |     const max = Number(await slider.getAttribute('max') || 100);
+  212 |     const step = Number(await slider.getAttribute('step') || 1);
+  213 | 
+  214 |     if (targetValue < min || targetValue > max) {
+  215 |         throw new Error('Target value is outside slider range');
+  216 |     }
+  217 | 
+  218 |     const steps = (targetValue - min) / step;
+  219 | 
+  220 |     if (!Number.isInteger(steps)) {
+  221 |         throw new Error('Target value does not match slider step');
+  222 |     }
+  223 | 
+  224 |     // Focus slider
+  225 |     await slider.focus();
+  226 | 
+  227 |     // Move to minimum value
+> 228 |     await slider.press('Home');
+      |                  ^ Error: locator.press: Test timeout of 30000ms exceeded.
+  229 | 
+  230 |     // Move forward using ArrowRight
+  231 |     for (let i = 0; i < steps; i++) {
+  232 |         await slider.press('ArrowRight');
+  233 |     }
+  234 | 
+  235 |     // Verify actual slider value
+  236 |     await expect(slider).toHaveValue(String(targetValue));
+  237 | }
+  238 | 
+  239 | 
+  240 | 
+  241 | 
+  242 | 
+  243 | 
+  244 |      // Verify blue background value
+  245 |     async verifyBlueValue(expectedValue: number) {
+  246 | 
+  247 |         await expect(this.locators.sliderValue)
+  248 |             .toHaveText(String(expectedValue));
+  249 |     }
+  250 | 
+  251 |     // Verify slider and blue number together
+  252 |     async verifySliderAndBlueValue(
+  253 |         sliderIndex: number,
+  254 |         expectedValue: number
+  255 |     ) {
+  256 | 
+  257 |         const slider = this.locators.allSlider.nth(sliderIndex);
+  258 | 
+  259 |         // Verify input value
+  260 |         await expect(slider)
+  261 |             .toHaveValue(String(expectedValue));
+  262 | 
+  263 |         // Verify blue output value
+  264 |         await expect(this.locators.sliderValue)
+  265 |             .toHaveText(String(expectedValue));
+  266 |     }
+  267 | 
+  268 | 
+  269 | 
+  270 | 
+  271 | 
+  272 | 
+  273 | 
+  274 | 
+  275 | 
+  276 |     // Test all 8 sliders
+  277 |     async testAllSliders() {
+  278 | 
+  279 |         const defaultValues = [5, 20, 15, 50, 25, 30, 40, 80];
+  280 | 
+  281 |         const targetValues = [30, 40, 25, 70, 45, 60, 75, 90];
+  282 | 
+  283 |         const count = await this.locators.allSlider.count();
+  284 | 
+  285 |         // Verify total sliders
+  286 |         expect(count).toBe(8);
+  287 | 
+  288 |         for (let i = 0; i < count; i++) {
+  289 | 
+  290 |             const slider = this.locators.allSlider.nth(i);
+  291 | 
+  292 |           
+  293 | 
+  294 |             // Verify default value
+  295 |             await expect(slider).toHaveValue(
+  296 |                 String(defaultValues[i])
+  297 |             );
+  298 | 
+  299 |             // Move slider to target value
+  300 |             await this.setSliderValue(i, targetValues[i]);
+  301 | 
+  302 |             // Verify updated input value
+  303 |             await expect(slider).toHaveValue(
+  304 |                 String(targetValues[i])
+  305 |             );
+  306 | 
+  307 |            
+  308 |         }
+  309 |     }
+  310 | 
+  311 | 
+  312 | 
+  313 | 
+  314 | 
+  315 | 
+  316 | 
+  317 | 
+  318 | 
+  319 | 
+  320 | 
+  321 | 
+  322 | 
+  323 | 
+  324 | 
+  325 | 
+  326 | 
+  327 | 
+  328 | 
+```
