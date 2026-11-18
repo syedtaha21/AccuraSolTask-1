@@ -25,7 +25,7 @@ export class CheckBoxActions {
 
     // Select first checkbox
     async selectFirstCheckBox() {
-        await this.locators.checkBox1.click();
+        await this.locators.checkBox1.check();
     }
 
     // Verify first checkbox is selected
@@ -35,7 +35,7 @@ export class CheckBoxActions {
 
     // Verify Checked message
     async verifyCheckedMessage() {
-        await expect(this.locators.checkedMessage).toBeVisible();
+        await expect(this.locators.checkedMessage).toHaveText('Checked!');
     }
 
 

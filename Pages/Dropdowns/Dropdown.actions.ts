@@ -1,4 +1,3 @@
-
 import { Page, expect } from '@playwright/test';
 import { DropdownLocators } from './Dropdown.locators';
 

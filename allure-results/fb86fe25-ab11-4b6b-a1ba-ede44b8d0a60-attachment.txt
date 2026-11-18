@@ -1,1 +1,0 @@
-Submit control HTML: Form submitted Successfully!

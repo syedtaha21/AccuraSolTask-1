@@ -11,9 +11,11 @@ export class CheckBoxLocators{
     constructor(page: Page){
         this.checkBoxHeading= page.locator('h1.font-bold');
         this.checkBox1= page.locator('(//input[@type="checkbox"])[1]');
-        this.checkedMessage=page.locator('//p[text()="Checked!"]');
+       
 
-        
+        this.checkedMessage = page.getByText('Checked!', {
+    exact: true
+});
         this.disableCheckBox= page.locator('(//input[@type="checkbox"])[4]');
        this.checkAllBtn=page.locator("//button[text()='Check All']");
         this.uncheckAllBtn=page.locator("//button[text()='Uncheck All']");

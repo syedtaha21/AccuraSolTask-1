@@ -1,8 +1,0 @@
-Current URL: https://www.testmuai.com/selenium-playground/javascript-alert-box-demo/
-Total Click Me buttons: 3
-Button 1: <button type="button" class="btn btn-dark my-30 mx-10 hover:bg-lambda-900 hover:border-lambda-900">Click Me</button>
-Button 2: <button type="button" class="btn btn-dark mx-10 hover:bg-lambda-900 hover:border-lambda-900">Click Me</button>
-Button 3: <button type="button" class="btn btn-dark mx-10 hover:bg-lambda-900 hover:border-lambda-900">Click Me</button>
-DIALOG TYPE: confirm
-DIALOG MESSAGE: Press a button!
-Confirm output: You pressed OK!

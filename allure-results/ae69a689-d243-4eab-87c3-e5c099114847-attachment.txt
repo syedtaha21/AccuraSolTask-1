@@ -1,6 +1,0 @@
-Total Checkboxes: 4
-Checkbox 1: false
-Checkbox 2: false
-Checkbox 3: false
-Checkbox 4: false
-Before Uncheck:

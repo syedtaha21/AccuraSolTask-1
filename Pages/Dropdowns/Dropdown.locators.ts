@@ -1,20 +1,9 @@
 import { Page, Locator } from '@playwright/test';
 
 export class DropdownLocators {
-
-     
-
-    // TC01 - Country Dropdown
      countryDropdown: Locator;
-    
-
-    // TC02 - Multiple States
      stateDropdown: Locator;
-
-    // TC03 - Disabled Values
      disabledDropdown: Locator;
-
-    // TC04 - Category Dropdown
      categoryDropdown: Locator;
 
     constructor(page:Page){

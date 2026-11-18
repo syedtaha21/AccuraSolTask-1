@@ -5,9 +5,8 @@ test('TC01 - Should enter a message and verify output', async ({ page }) => {
 
     let ajaxForm = new AjaxFormActions(page);
 
-    // Open website
-    await page.goto('https://www.testmuai.com/selenium-playground/ajax-form-submit-demo/');
-
+    
+    await ajaxForm.openWebsite();
     // Verify heading
     await ajaxForm.verifyFormHeading();
     
@@ -23,7 +22,7 @@ test('TC01 - Should enter a message and verify output', async ({ page }) => {
 
     // Verify image
     await ajaxForm.verifyImageIsVisible();
-
+   
 });
 
 

@@ -1,2 +1,0 @@
-Dialog Type: prompt
-Dialog Message: Please enter your name

@@ -1,6 +1,5 @@
-
 import { Page, expect } from '@playwright/test';
-import { JavaScriptAlerts } from './JavaScriptAlert.locators';
+import { JavaScriptAlerts } from './JSAlert.locators';
 
 export class JSAlertsActins {
 

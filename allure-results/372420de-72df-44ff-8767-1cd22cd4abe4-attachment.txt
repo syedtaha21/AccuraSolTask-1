@@ -1,2 +1,0 @@
-Dialog Type: confirm
-Dialog Message: Press a button!

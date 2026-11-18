@@ -7,10 +7,10 @@ let bootstrapListBoxActions = new BootstrapListBoxActions(page);
     // Open website
 
 
-    await page.goto('https://www.testmuai.com/selenium-playground/bootstrap-dual-list-box-demo/');
+    await bootstrapListBoxActions.openWebsite();
 
     // Verify heading and list boxes
-    //let bootstrapListBoxActions = new BootstrapListBoxActions(page);
+   
     await bootstrapListBoxActions.verifyHeading();
     await bootstrapListBoxActions.verifyAvailableListBoxIsVisible();
     await bootstrapListBoxActions.verifySelectedListBoxIsVisible();
@@ -23,7 +23,7 @@ let bootstrapListBoxActions = new BootstrapListBoxActions(page);
 
 test('TC02 - Should select a single item from available list', async ({ page }) => {
     let bootstrapListBoxActions = new BootstrapListBoxActions(page);
-    await page.goto('https://www.testmuai.com/selenium-playground/bootstrap-dual-list-box-demo/');
+    await bootstrapListBoxActions.openWebsite();
     await bootstrapListBoxActions.verifyAvailableListBoxIsVisible();
     await bootstrapListBoxActions.selectSingleItemFromAvailableList();
     await bootstrapListBoxActions.verifySelectedItemIsSelected();
@@ -38,7 +38,7 @@ test('TC03 - Should move single item from left list  to right List', async ({ pa
 
     let bootstrapListBoxActions = new BootstrapListBoxActions(page);
 
-    await page.goto('https://www.testmuai.com/selenium-playground/bootstrap-dual-list-box-demo/');
+    await bootstrapListBoxActions.openWebsite();
 
     await bootstrapListBoxActions.moveItemFromLeftToRight();
 
@@ -48,7 +48,7 @@ test('TC04 - Should move single item from right list  to left List', async ({ pa
 
     let bootstrapListBoxActions = new BootstrapListBoxActions(page);
 
-    await page.goto('https://www.testmuai.com/selenium-playground/bootstrap-dual-list-box-demo/');
+    await bootstrapListBoxActions.openWebsite();
 
     await bootstrapListBoxActions.moveRightToLeft();
 

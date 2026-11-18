@@ -60,8 +60,6 @@ test('TC03 - Verify Dynamic Slider Values', async ({ page }) => {
 
 });
 
-
-
 test('TC04 - Verify All 8 Range Sliders', async ({ page }) => {
 
     const sliderActions = new SliderActions(page);

@@ -11,6 +11,12 @@ export class AjaxFormActions{
     }
 
 
+
+    //open Website
+    async openWebsite(){
+        await this.page.goto('https://www.testmuai.com/selenium-playground/ajax-form-submit-demo/');
+    }
+
     //form heading
     async verifyFormHeading(){
         await expect (this.ajaxForm.formHeading).toBeVisible();
@@ -37,12 +43,7 @@ export class AjaxFormActions{
 
    async verifyImageIsVisible() {
 
-    await this.page.waitForTimeout(2000);
-
-  
-
+    await this.page.waitForTimeout(2000); 
+    return await this.ajaxForm.image.isVisible();
 }
-
-
-
 }

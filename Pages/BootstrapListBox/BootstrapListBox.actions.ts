@@ -8,7 +8,13 @@ export class BootstrapListBoxActions{
         this.page= page;
         this.bootstrapListBoxLocators= new BootstrapListBoxLocators(page);
     }
+   //open website
 
+
+   async openWebsite(){
+    await this.page.goto('https://www.testmuai.com/selenium-playground/bootstrap-dual-list-box-demo/');
+   }
+   
     //heading
     async verifyHeading(){
         await expect( this.bootstrapListBoxLocators.heading).toBeVisible();
@@ -42,8 +48,6 @@ export class BootstrapListBoxActions{
         const availableItem = await this.bootstrapListBoxLocators.AvailableListBox.locator('li').last();
          await availableItem.click();
           
-
-        
     }
 
     //verify selected item is selected
